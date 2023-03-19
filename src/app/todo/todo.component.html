@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- <link rel='stylesheet' type='text/css' media='screen' href='todo.component.css'> -->
+        <!-- <script src='main.js' async></script> -->
+    </head>
+    <body>
+        <section id="user-input" class="card">
+            <div class="ctrlBtn">
+                <h1>Todo List App</h1>
+                <input type="text" name="" id="task-input" placeholder="Add New Todo..." [(ngModel)]="todoTitle">
+                <button id="add-btn" (click)="addTodo()">Add Todo</button>
+            </div>
+        </section>
+        <section id="toDo" class="card">
+            <ul id="remaining-list">
+                    <li *ngFor="let todo of todoList">
+                        <span [ngClass]="{'complete': todo.completed}">{{todo.todo}}</span>
+                        <i class="fa-solid fa-square-xmark red-icon" (click)="deleteTodo(todo)"></i>
+                        <i class="fa-solid fa-square-check green-icon" (click)="completeTodo(todo)"></i>
+                    </li>
+            </ul>
+        </section>
+    </body>
+</html>
