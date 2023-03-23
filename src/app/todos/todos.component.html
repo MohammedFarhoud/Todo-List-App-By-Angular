@@ -1,0 +1,20 @@
+
+<section id="user-input" class="card">
+    <div class="ctrlBtn">
+        <h3>{{_usersService.user.name}}</h3>
+        <span style="text-align: center;"><p>{{_usersService.user.favQuote}}</p></span>
+    </div>
+</section>
+<section id="user-input" class="card">
+    <div class="ctrlBtn">
+        <h3>Todo List App</h3>
+        <input type="text" name="" id="task-input" placeholder="Add New Todo..." [(ngModel)]="_todosService.todo">
+        <button id="add-btn" type="button" (click)="_todosService.addTodo()">Add Todo</button>
+    </div>
+</section>
+<section id="toDo" class="todo-container card">
+    <ul id="remaining-list">
+        <app-todo *ngFor="let todo of todos" [todo]="todo">
+        </app-todo>
+    </ul>
+</section>

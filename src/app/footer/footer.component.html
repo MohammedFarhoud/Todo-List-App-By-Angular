@@ -1,0 +1,21 @@
+<ng-container class="footer">
+        <nav class="footer navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid justify-content-between">
+              <div class="d-flex">
+                <i class="fa-solid fa-battery-three-quarters fa-1x"><span id="battery">{{batteryLevel}}  %</span></i>
+              </div>
+              <ul class="navbar-nav flex-row">
+                <li class="nav-item dropdown me-3 me-lg-1">
+                  <a
+                    class="nav-link hidden-arrow"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                  >
+                    <span class="badge rounded-pill badge-notification bg-success">{{operatingSystem}}</span>
+                    <span class="badge rounded-pill badge-notification bg-success">{{browser}}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+</ng-container>

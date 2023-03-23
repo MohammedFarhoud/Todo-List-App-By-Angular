@@ -1,0 +1,12 @@
+<section id="user-input" class="card">
+    <div class="ctrlBtn">
+        <h3>Favorite todos</h3>
+    </div>
+  </section>
+  <section id="toDo" class="todo-container card">
+    <ul id="remaining-list">
+      <li *ngFor="let todo of _todosService.favoriteTodos">
+        <span>{{todo.todo}}</span>
+      </li>
+    </ul>
+  </section>

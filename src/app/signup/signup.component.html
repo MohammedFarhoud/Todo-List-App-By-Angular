@@ -1,0 +1,37 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-1 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-2 mt-md-1 pb-1">
+                <h2 class="fw-bold mb-1 text-uppercase">Signup</h2>
+                <p class="text-white-50 mb-3">Please fill the following fields!</p>
+                <form [formGroup]="myForm" (ngSubmit)="submit()">
+                    <div class="form-outline form-white mb-2">
+                        <label class="form-label" for="typeEmailX">Username</label>
+                        <input [ngClass]="myForm.get('username')?.touched ? myForm.get('username')?.errors ? 'failure' : 'success' : ''"
+                            type="text" id="typeEmailX" class="form-control form-control-lg" placeholder="Username" formControlName="username"/>
+                        <p class="text-danger text-start" *ngIf="myForm.get('username')?.touched && myForm.get('username')?.errors?.['required']">Username is required</p>
+                    </div>
+                    <div class="form-outline form-white mb-2">
+                        <label class="form-label" for="typeEmailX">Email</label>
+                        <input [ngClass]="myForm.get('email')?.touched ? myForm.get('email')?.errors ? 'failure' : 'success' : ''"
+                            type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Email" formControlName="email"/>
+                        <p class="text-danger text-start" *ngIf="myForm.get('email')?.touched && myForm.get('email')?.errors?.['required']">Email is required</p>
+                      </div>
+                    <div class="form-outline form-white mb-2">
+                        <label class="form-label" for="typeEmailX">Password</label>
+                        <input [ngClass]="myForm.get('password')?.touched ? myForm.get('password')?.errors ? 'failure' : 'success' : ''"
+                            type="password" id="typeEmailX" class="form-control form-control-lg" placeholder="Password" formControlName="password"/>
+                        <p class="text-danger text-start" *ngIf="myForm.get('password')?.touched && myForm.get('password')?.errors?.['required']">Password is required</p>
+                    </div>
+                    <button class="btn btn-outline-light btn-lg px-5" type="submit" [disabled]="myForm.invalid">Signup</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

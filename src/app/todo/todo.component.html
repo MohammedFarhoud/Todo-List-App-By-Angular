@@ -1,30 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Page Title</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- <link rel='stylesheet' type='text/css' media='screen' href='todo.component.css'> -->
-        <!-- <script src='main.js' async></script> -->
-    </head>
-    <body>
-        <section id="user-input" class="card">
-            <div class="ctrlBtn">
-                <h1>Todo List App</h1>
-                <input type="text" name="" id="task-input" placeholder="Add New Todo..." [(ngModel)]="todoTitle">
-                <button id="add-btn" (click)="addTodo()">Add Todo</button>
-            </div>
-        </section>
-        <section id="toDo" class="card">
-            <ul id="remaining-list">
-                    <li *ngFor="let todo of todoList">
-                        <span [ngClass]="{'complete': todo.completed}">{{todo.todo}}</span>
-                        <i class="fa-solid fa-square-xmark red-icon" (click)="deleteTodo(todo)"></i>
-                        <i class="fa-solid fa-square-check green-icon" (click)="completeTodo(todo)"></i>
-                    </li>
-            </ul>
-        </section>
-    </body>
-</html>
+<section class="todo">
+    <li>
+        <span [ngClass]="{'complete': todo.completed}" (click)="_todosService.navigateToTodoDetails(todo)">{{todo.todo}}</span>
+        <!-- <i class="fa-solid fa-square-xmark red-icon" (click)="_todosService.deleteTodo(todo)"></i> -->
+  <i class="fa-solid fa-square-xmark red-icon btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="_todosService.getSelectedTodo(todo)"></i>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Todo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this todo?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteTodo(_todosService.selectedTodo)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        <i class="fa-solid fa-square-check green-icon" (click)="_todosService.completeTodo(todo)"></i>
+        <i class="fa-solid fa-star yellow-icon" [ngClass]="{'fa-star-color': todo.favourite}" (click)="_todosService.addToFavorite(todo)"></i>
+    </li>
+</section>

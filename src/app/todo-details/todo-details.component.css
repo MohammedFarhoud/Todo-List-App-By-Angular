@@ -131,13 +131,24 @@
   li span {
     display: inline-block;
     width: 90%;
-    cursor: pointer;
   }
 
   h1 {
     text-align: center;
+    color: #ff3482;
+    border: 2px solid #ff3482;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    padding: 10px;
   }
 
   #remaining-list {
     padding-left: 0px;
+  }
+
+  span {
+    text-align: center;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 500;
   }

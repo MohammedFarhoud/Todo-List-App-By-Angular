@@ -1,0 +1,31 @@
+<section class="vh-100 gradient-custom">
+  <form #form="ngForm" (ngSubmit)="submit(form)">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-3 mt-md-3 pb-1">
+                <h2 class="fw-bold mb-3 text-uppercase">Login</h2>
+                <p class="text-white-50 mb-3">Please enter your login and favourite quote!</p>
+                <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="typeuserNameX">Username</label>
+                    <input [ngClass]="username.touched ? username.errors ? 'failure' : 'success' : ''" 
+                        type="text" id="typeuserNameX" class="form-control form-control-lg" placeholder="Username" name="username" #username="ngModel" [(ngModel)]="userName" ngModel required [minLength]="3" [maxlength]="20"/>
+                    <p class="text-danger text-start" id="errormsg" *ngIf="username.touched && username.errors?.['required']">Username is required!</p>
+                </div>
+                <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="typeQuoteX">Favorite quote</label>
+                    <textarea [ngClass]="favQuote.touched ? favQuote.errors ? 'failure' : 'success' : ''" 
+                        class="form-control" placeholder="Leave your quote here..." id="typeQuoteX" rows="4" #favQuote="ngModel" name="favQuote" [(ngModel)]="quote" ngModel required [minlength]="10" maxlength="200"></textarea>
+                    <p class="text-danger text-start" id="errormsg" *ngIf="favQuote.touched && favQuote.errors?.['required']">Favorite Quote is required!</p>
+                </div>
+                    <button class="btn btn-outline-light btn-lg px-5" type="submit" [disabled]="form.invalid" (click)="getLogin()">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
