@@ -1,0 +1,10 @@
+a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    font-weight: bold;
+    color: teal;
+}

@@ -89,6 +89,15 @@
                     <span>Signup</span>
                   </a>
                 </li>
+                <li class="nav-item dropdown me-3 me-lg-1" [routerLink]="['/about']" *ngIf="!isLoggedIn">
+                  <a
+                    class="nav-link hidden-arrow"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                  >
+                    <span>About</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>

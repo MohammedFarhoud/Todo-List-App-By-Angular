@@ -7,11 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
     "compodoc:build": "compodoc -p tsconfig.doc.json",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
-    "lint": "ng lint",
-    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json -w -s"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

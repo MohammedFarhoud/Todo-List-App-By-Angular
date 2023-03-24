@@ -17,6 +17,7 @@ import { FavoriteTodosComponent } from './favorite-todos/favorite-todos.componen
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { SignupComponent } from './signup/signup.component';
 import { TodosInterceptor } from './todos.interceptor';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TodosInterceptor } from './todos.interceptor';
     DeletedTodosComponent,
     FavoriteTodosComponent,
     TodoDetailsComponent,
-    SignupComponent
+    SignupComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,

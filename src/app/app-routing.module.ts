@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './auth.guard';
 import { DeletedTodosComponent } from './deleted-todos/deleted-todos.component';
 import { FavoriteTodosComponent } from './favorite-todos/favorite-todos.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'deleted', component: DeletedTodosComponent, canActivate: [AuthGuard]},
   {path: 'favorite', component: FavoriteTodosComponent, canActivate: [AuthGuard]},
   {path: 'todos/:id', component: TodoDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'about', component: AboutComponent},
   {path: '**', component: NotFoundComponent},
 ];
 
