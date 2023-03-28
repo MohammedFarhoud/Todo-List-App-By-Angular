@@ -1,3 +1,6 @@
+.stories {
+    margin-bottom: 100px;
+}
 a {
     text-decoration: none;
     color: darkred;
@@ -7,4 +10,18 @@ a {
 a:hover {
     font-weight: bold;
     color: teal;
+}
+
+.story1{
+    box-shadow: rgb(87, 214, 237) -7px 7px 10px;
+}
+.story2{
+    box-shadow: rgb(243, 101, 101) 7px 7px 10px;
+}
+
+.story1:hover{
+    box-shadow: rgb(87, 214, 237) inset 7px -7px 10px;
+}
+.story2:hover{
+    box-shadow: rgb(243, 101, 101) inset -7px -7px 10px;
 }
